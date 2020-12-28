@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for f in "$(dirname "${0}")"/maintain/*.sh; do
+for f in "$(dirname "${0}")"/fun/*.sh; do
     # shellcheck disable=SC1090
     source "${f}"
 done
