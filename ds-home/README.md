@@ -4,3 +4,5 @@ run `ds-home/bin/maintain.sh` to install/upgrade/uninstall from dev or prod name
 
 
 TODO: For now, PVC/PV arenot automatically cleaned up (or if they are, it takes a while to happen)
+
+the dev env secrets file contains git keys (unused in the deployment)
