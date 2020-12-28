@@ -1,0 +1,31 @@
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: wiki.corno.dev
+      paths: ["/"]
+  tls:
+   - secretName: dev-wiki-tls
+     hosts:
+       - wiki.corno.dev
+
+postgresql:
+  persistence:
+    ## Enable PostgreSQL persistence using Persistent Volume Claims.
+    ##
+    enabled: true
+    storageClass: csi-lvm-sc-mirror
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+
+# resources:
+#   limits:
+#     cpu: 200m
+#     memory: 256Mi
+#   requests:
+#     cpu: 200m
+#     memory: 256Mi
